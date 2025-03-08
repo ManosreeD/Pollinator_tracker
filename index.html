@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pollinator Identifier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+        /* Restrict the size of images */
+        #uploaded-image {
+            max-width: 50%; /* Ensures the image fits the container */
+            height: 50%;    /* Maintain aspect ratio */
+            max-height: 400px; /* Limit the height */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-roboto">
+    <div class="container mx-auto p-4">
+        <header class="text-center my-8">
+            <h1 class="text-4xl font-bold text-gray-800">Pollinator Identifier</h1>
+            <p class="text-gray-600">Upload an image or video to identify pollinators</p>
+        </header>
+        <main class="bg-white p-6 rounded-lg shadow-lg">
+            <form class="flex flex-col items-center" enctype="multipart/form-data" id="upload-form">
+                <label class="cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" for="file-upload">
+                    <i class="fas fa-upload"></i> Upload Image/Video
+                </label>
+                <input accept="image/*,video/*" class="hidden" id="file-upload" required="" type="file"/>
+                <button id="submit-btn" class="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" type="submit" disabled>Identify</button>
+            </form>
+            <!-- Error message to show any errors -->
+            <p id="error-message" class="hidden text-red-500"></p>
+            <div class="mt-8 hidden" id="results">
+                <h2 class="text-2xl font-bold text-gray-800">Results</h2>
+                <p><strong>Pollinator Name:</strong> <span id="pollinator-name"></span></p>
+                <p><strong>Number of Pollinators:</strong> <span id="pollinator-count"></span></p>
+                <p><strong>Frequency:</strong> <span id="pollinator-frequency"></span></p>
+                <p><strong>Model Accuracy:</strong> <span id="model-accuracy"></span></p>
+            </div>
+            <!-- Image and Video display -->
+            <div class="mt-8">
+                <img id="uploaded-image" class="hidden w-full rounded-lg" alt="Uploaded Image"/>
+                <video id="uploaded-video" class="hidden w-full rounded-lg" controls></video>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
