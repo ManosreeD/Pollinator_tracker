@@ -1,1 +1,4 @@
-venv/
+/backend/uploads/
+/backend/venv/
+
+/yolov5
