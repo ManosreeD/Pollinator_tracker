@@ -40,15 +40,10 @@ Now, install the required dependencies:
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Clone & Install YOLOv5
-
-Since `yolov5/` is not included in the repo, you need to clone it separately:
-```sh
-cd ..
-git clone https://github.com/ultralytics/yolov5.git
-```
+### 3️⃣ Install YOLOv5
 
 Now, install YOLOv5 dependencies:
+
 ```sh
 cd yolov5
 pip install -r requirements.txt
@@ -59,10 +54,13 @@ cd ..
 
 - The `best.pt` model file should be inside the `backend/` folder.
 - If it is missing, download or place your trained YOLOv5 model inside:
+
     ```
     Pollinator_tracker/
     │── backend/
     │   ├── best.pt  ✅ (Place the model file here)
+    │   ├── uploads/    # Stores Uploaded/Processed Images
+    │   ├── requirements.txt  # Python Dependencies
     ```
 
 ### 5️⃣ Run the Flask Backend
