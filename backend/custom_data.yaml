@@ -1,0 +1,16 @@
+  # Make sure this is the correct path in your Colab environment
+train: ./data/images/train/
+val: ./data/images/val/
+
+nc: 10
+names:
+  - 'Bee fly'
+  - 'Beetle'
+  - 'Bumble bees'
+  - 'Butterfly'
+  - 'Honey bees'
+  - 'Hover fly'
+  - 'Humming bird'
+  - 'Moths'
+  - 'Sun bird'
+  - 'Wasp'
