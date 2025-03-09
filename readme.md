@@ -34,23 +34,7 @@ Activate the virtual environment:
     venv\Scripts\activate
     ```
 
-
-Now, install the required dependencies:
-```sh
-pip install -r requirements.txt
-```
-
-### 3️⃣ Install YOLOv5
-
-Now, install YOLOv5 dependencies:
-
-```sh
-cd yolov5
-pip install -r requirements.txt
-cd ..
-```
-
-### 4️⃣ Ensure the YOLOv5 Model (`best.pt`) is Available
+### 3️⃣ Ensure the YOLOv5 Model (`best.pt`) is Available
 
 - The `best.pt` model file should be inside the `backend/` folder.
 - If it is missing, download or place your trained YOLOv5 model inside:
@@ -60,10 +44,9 @@ cd ..
     │── backend/
     │   ├── best.pt  ✅ (Place the model file here)
     │   ├── uploads/    # Stores Uploaded/Processed Images
-    │   ├── requirements.txt  # Python Dependencies
     ```
 
-### 5️⃣ Run the Flask Backend
+### 4️⃣ Run the Flask Backend
 
 Navigate to the `backend/` folder and start the Flask server:
 
@@ -78,7 +61,7 @@ If everything is correct, you should see:
 Running on http://127.0.0.1:5000/
 ```
 
-### 6️⃣ Open the Frontend
+### 5️⃣ Open the Frontend
 
 - **DO NOT use Live Server (it may cause refresh issues).**
 
@@ -92,13 +75,6 @@ Running on http://127.0.0.1:5000/
 ---
 
 ## 📌 Additional Commands
-
-### 🔄 If You Need to Reinstall Dependencies
-
-Inside the `backend/` folder:
-```sh
-pip install --upgrade -r requirements.txt
-```
 
 ### 🐍 If You Need to Exit the Virtual Environment
 
@@ -116,7 +92,6 @@ Pollinator_tracker/
 │   ├── app.py      # Flask API File
 │   ├── best.pt     # YOLOv5 Model (Must be added)
 │   ├── uploads/    # Stores Uploaded/Processed Images
-│   ├── requirements.txt  # Python Dependencies
 │
 │── frontend/       # Frontend (HTML, CSS, JS)
 │   ├── index.html
