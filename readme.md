@@ -1,118 +1,124 @@
-# 🐝 Pollinator Tracker - YOLOv5 Flask App
+# 🐝 Pollinator Tracker - MERN Stack Application
 
-This project is a **Pollinator Identification System** using **YOLOv5** and **Flask**.  
-It detects pollinators in uploaded images and provides insights on their presence and frequency.
+This project is a **Pollinator Identification System** using **YOLOv5** and **MERN Stack** (MongoDB, Express, React, Node.js).  
+It detects pollinators in uploaded images and videos, providing insights on their presence and frequency.
 
 ---
 
-## 🚀 How to Run This Project After Cloning
+## 🚀 How to Run This Project
 
 Follow these steps to set up and run the project on your machine.
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Prerequisites
 
-First, download the project by running:
+Make sure you have the following installed:
+- Node.js (v14+)
+- MongoDB (local installation or MongoDB Atlas account)
+- Python 3.8+ with pip
+- Git
+
+### 2️⃣ Clone the YOLOv5 Repository
+
+If you haven't already, clone the YOLOv5 repository next to this project:
 
 ```sh
-git clone https://github.com/ManosreeD/Pollinator_tracker.git
-cd Pollinator_tracker
+git clone https://github.com/ultralytics/yolov5.git
 ```
 
-### 2️⃣ Set Up the Virtual Environment
+### 3️⃣ Install Python Dependencies
 
-Navigate to the `backend/` folder and create a virtual environment:
+Install the required Python packages for YOLOv5 model inference:
 
 ```sh
-cd backend
-python -m venv venv
+pip install torch torchvision numpy opencv-python pillow
+cd yolov5
+pip install -r requirements.txt
+cd ..
 ```
 
-Activate the virtual environment:
-- **Windows (CMD or PowerShell)**
-
-    ```sh
-    venv\Scripts\activate
-    ```
-
-### 3️⃣ Ensure the YOLOv5 Model (`best.pt`) is Available
+### 4️⃣ Ensure the YOLOv5 Model (`best.pt`) is Available
 
 - The `best.pt` model file should be inside the `backend/` folder.
 - If it is missing, download or place your trained YOLOv5 model inside:
 
-    ```
-    Pollinator_tracker/
-    │── backend/
-    │   ├── best.pt  ✅ (Place the model file here)
-    │   ├── uploads/    # Stores Uploaded/Processed Images
-    ```
+```
+Pollinator_tracker/
+│── backend/
+│   ├── best.pt  ✅ (Place the model file here)
+```
 
-### 4️⃣ Run the Flask Backend
+### 5️⃣ Set Up MongoDB
 
-Navigate to the `backend/` folder and start the Flask server:
+Make sure MongoDB is running locally on the default port (27017), or update the `.env` file with your MongoDB connection string.
+
+### 6️⃣ Install Backend Dependencies and Start Server
 
 ```sh
 cd backend
-python app.py
+npm install
+npm start
 ```
 
-If everything is correct, you should see:
+The server should start at http://localhost:5000
 
-```
-Running on http://127.0.0.1:5000/
-```
-
-### 5️⃣ Open the Frontend
-
-- **DO NOT use Live Server (it may cause refresh issues).**
-
-- Instead, open `frontend/index.html` manually in your browser:
-    - **Windows:** Right-click `index.html` → Open with Chrome  
-    - **Mac/Linux:** Run:
-        ```sh
-        open frontend/index.html
-        ```
-
----
-
-## 📌 Additional Commands
-
-### 🐍 If You Need to Exit the Virtual Environment
+### 7️⃣ Install Frontend Dependencies and Start React App
 
 ```sh
-deactivate
+cd frontend
+npm install
+npm run dev
+```
+
+The React app should start at http://localhost:5173
+
+### 8️⃣ Open the App in Your Browser
+
+Navigate to:
+```
+http://localhost:5173
 ```
 
 ---
 
-## 🚀 Project Structure
+## 📚 Features
+
+- ✅ Upload and process both **images** and **videos** for pollinator detection
+- ✅ YOLOv5 deep learning model for accurate detection
+- ✅ Video processing with frame extraction and analysis
+- ✅ Statistical analysis of detected pollinators
+- ✅ MongoDB for data persistence
+- ✅ Clean, modern UI with React
+
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**: React, Framer Motion, Tailwind CSS
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Machine Learning**: YOLOv5 (PyTorch)
+- **Video Processing**: OpenCV
+
+---
+
+## 📁 Project Structure
 
 ```
 Pollinator_tracker/
-│── backend/        # Flask Backend (Runs the API)
-│   ├── app.py      # Flask API File
-│   ├── best.pt     # YOLOv5 Model (Must be added)
-│   ├── uploads/    # Stores Uploaded/Processed Images
+│── backend/             # Express.js Backend
+│   ├── scripts/         # Python scripts for YOLOv5 processing
+│   ├── uploads/         # Stores uploaded files and results
+│   ├── routes/          # API routes
+│   ├── models/          # MongoDB models
+│   ├── server.js        # Main Express server
+│   └── best.pt          # YOLOv5 model
 │
-│── frontend/       # Frontend (HTML, CSS, JS)
-│   ├── index.html
-│   ├── script.js
-│   ├── styles.css
+│── frontend/            # React Frontend
+│   ├── src/
+│   │   ├── components/  # React components
+│   │   ├── api.js       # API integration
+│   │   └── ...
+│   └── ...
 │
-│── yolov5/         # YOLOv5 (Cloned Separately)
-│   ├── hubconf.py  
-│   ├── models/
-│   ├── utils/
-│
-│── README.md       # This Guide 🚀
+│── yolov5/              # YOLOv5 repository (cloned separately)
 ```
-
----
-
-## 🎯 Final Notes
-
-✔ **Make sure `yolov5/` is cloned and `best.pt` is inside `backend/`.**  
-✔ **Run `python app.py` in the `backend/` folder to start the server.**  
-✔ **Open `frontend/index.html` manually in the browser.**  
-✔ **Do not use Live Server to avoid auto-refresh issues.**  
-
-🔥 **Now your project is fully set up!** If you face any issues, open an **issue in GitHub** or contact the project owner. 🚀😊
