@@ -80,7 +80,7 @@ export default function PollinatorDetector() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-white flex flex-col items-center justify-center p-10 space-y-10 font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-100 to-white flex flex-col items-center p-10 space-y-10 font-sans">
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -96,6 +96,8 @@ export default function PollinatorDetector() {
         transition={{ delay: 0.2 }}
         className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-3xl flex flex-col items-center space-y-6 border border-yellow-300 backdrop-blur-md"
       >
+        {/* Removing the navigation links since they're now in the navbar */}
+        
         <div className="text-center">
           <p className="text-lg text-yellow-600 font-medium mb-2">Upload an image or video to detect pollinators</p>
           <Sparkles className="mx-auto text-yellow-500" size={36} />
